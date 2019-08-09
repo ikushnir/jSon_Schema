@@ -12,15 +12,7 @@
       "version"
     ],
     "properties": {
-      "Build-is not added": {
-        "$id": "#/properties/Build",
-        "type": "object",
-        "title": "The Build Schema",
-        "required": [
-          "Number",
-          "SourceBranch",
-          "SourceVersion"
-        ],
+     
         "properties": {
           "Number": {
             "$id": "#/properties/Build/properties/Number",
