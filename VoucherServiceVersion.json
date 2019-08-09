@@ -19,7 +19,7 @@
         "required": [
           "Number",
           "SourceBranch",
-          "SourceVersion"
+          
         ],
         "properties": {
           "Number": {
