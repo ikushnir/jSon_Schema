@@ -46,15 +46,7 @@
           }
         }
       },
-      "Release": {
-        "$id": "#/properties/Release",
-        "type": "object",
-        "title": "The Release Schema",
-        "required": [
-          "EnvironmentName",
-          "Name",
-          "RequestedBy"
-        ],
+
         "properties": {
           "EnvironmentName": {
             "$id": "#/properties/Release/properties/EnvironmentName",
@@ -109,13 +101,7 @@
          }
        }
      },
-     "Assembly": {
-       "$id": "#/properties/Assembly",
-       "type": "object",
-       "title": "The Assembly Schema",
-       "required": [
-         "Version",
-         "LastWriteTime"
+
        ],
        "properties": {
          "Version": {
