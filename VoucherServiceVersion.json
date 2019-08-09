@@ -1,159 +1,266 @@
-   {
-     "definitions": {},
-     "$schema": "http://json-schema.org/draft-07/schema#",
-     "$id": "http://example.com/root.json",
-     "type": "object",
-     "title": "The Root Schema",
-     "required": [
-       "Build",
-       "Release",
-           "Environment",
-      "version"
-    ],
-    "properties": {
-     
-        "properties": {
-          "Number": {
-            "$id": "#/properties/Build/properties/Number",
-            "type": "string",
-            "title": "The Number Schema",
-            "default": "",
-            "examples": [
-              "Voucher-API.20190802.1"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "SourceBranch": {
-            "$id": "#/properties/Build/properties/SourceBranch",
-            "type": "string",
-            "title": "The Sourcebranch Schema",
-            "default": "",
-            "examples": [
-              "refs/heads/master"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "SourceVersion": {
-            "$id": "#/properties/Build/properties/SourceVersion",
-            "type": "string",
-            "title": "The Sourceversion Schema",
-            "default": "",
-            "examples": [
-              "6a3ef5aae6139b6781b4bfa793f74a4b6a5824cf"
-            ],
-            "pattern": "^(.*)$"
-          }
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "Campaign",
+    "ExternalWebGameList",
+    "Status"
+  ],
+  "properties": {
+    "Campaign": {
+      "$id": "#/properties/Campaign",
+      "type": "object",
+      "title": "The Campaign Schema",
+      "required": [
+        "Name",
+        "Picture",
+        "InfoPicture",
+        "ValidFrom",
+        "ValidTo",
+        "TermsAndConditions",
+        "Priority",
+        "TriggerId",
+        "TicketUnscratched",
+        "TicketLooser",
+        "TicketWinner"
+      ],
+      "properties": {
+        "Name": {
+          "$id": "#/properties/Campaign/properties/Name",
+          "type": "string",
+          "title": "The Name Schema",
+          "default": "",
+          "examples": [
+            "Påskeskrab"
+          ]
+        },
+        "Picture": {
+          "$id": "#/properties/Campaign/properties/Picture",
+          "type": "string",
+          "title": "The Picture Schema",
+          "default": "",
+          "examples": [
+            "https://dev-coop-medlemsapp.s1.umbraco.io/media/5723/kims_campaign_750x400px.jpg"
+          ]
+        },
+        "InfoPicture": {
+          "$id": "#/properties/Campaign/properties/InfoPicture",
+          "type": "string",
+          "title": "The Infopicture Schema",
+          "default": "",
+          "examples": [
+            "https://dev-coop-medlemsapp.s1.umbraco.io/media/5722/ticket-intro-750x1124-px_2.jpg"
+          ]
+        },
+        "ValidFrom": {
+          "$id": "#/properties/Campaign/properties/ValidFrom",
+          "type": "string",
+          "title": "The Validfrom Schema",
+          "default": "",
+          "examples": [
+            "2018-10-21T11:42:01Z"
+          ]
+        },
+        "ValidTo": {
+          "$id": "#/properties/Campaign/properties/ValidTo",
+          "type": "string",
+          "title": "The Validto Schema",
+          "default": "",
+          "examples": [
+            "2018-12-20T12:42:06Z"
+          ]
+        },
+        "TermsAndConditions": {
+          "$id": "#/properties/Campaign/properties/TermsAndConditions",
+          "type": "string",
+          "title": "The Termsandconditions Schema",
+          "default": "",
+          "examples": [
+            "Konkurrencebetingelser\nCoop trækker lod blandt alle deltagere om 1.000 x Sødam kylling. Konkurrencen slutter den 02.07.2017. Vinderne udtrækkes løbende og vil modtage præmien i Medlemsapp'en umiddelbart efter spillet afsluttes. Præmien skal afhentes indenfor 7 dage efter præmien er vundet. Ansatte i Coop-koncernen og brugsforeningerne samt medlemmer af deres husstande kan ikke deltage i konkurrencen."
+          ]
+        },
+        "Priority": {
+          "$id": "#/properties/Campaign/properties/Priority",
+          "type": "integer",
+          "title": "The Priority Schema",
+          "default": 0,
+          "examples": [
+            1
+          ]
+        },
+        "TriggerId": {
+          "$id": "#/properties/Campaign/properties/TriggerId",
+          "type": "integer",
+          "title": "The Triggerid Schema",
+          "default": 0,
+          "examples": [
+            317
+          ]
+        },
+        "TicketUnscratched": {
+          "$id": "#/properties/Campaign/properties/TicketUnscratched",
+          "type": "string",
+          "title": "The Ticketunscratched Schema",
+          "default": "",
+          "examples": [
+            "https://dev-coop-medlemsapp.s1.umbraco.io/media/5725/ticket-unscratched-750x1124-px.jpg"
+          ]
+        },
+        "TicketLooser": {
+          "$id": "#/properties/Campaign/properties/TicketLooser",
+          "type": "string",
+          "title": "The Ticketlooser Schema",
+          "default": "",
+          "examples": [
+            "https://dev-coop-medlemsapp.s1.umbraco.io/media/5726/ticket-looser-750x1124-px-vs-3-med-streger.jpg"
+          ]
+        },
+        "TicketWinner": {
+          "$id": "#/properties/Campaign/properties/TicketWinner",
+          "type": "string",
+          "title": "The Ticketwinner Schema",
+          "default": "",
+          "examples": [
+            "https://dev-coop-medlemsapp.s1.umbraco.io/media/5724/ticket-winner-750x1124-px-vs-1-med-streger.jpg"
+          ]
         }
-      },
-
+      }
+    },
+    "ExternalWebGameList": {
+      "$id": "#/properties/ExternalWebGameList",
+      "type": "array",
+      "title": "The Externalwebgamelist Schema",
+      "items": {
+        "$id": "#/properties/ExternalWebGameList/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "Name",
+          "Picture",
+          "InfoPicture",
+          "ValidFrom",
+          "ValidTo",
+          "TermsAndConditions",
+          "Priority",
+          "TriggerId",
+          "GameUrl"
+        ],
         "properties": {
-          "EnvironmentName": {
-            "$id": "#/properties/Release/properties/EnvironmentName",
-            "type": "string",
-            "title": "The Environmentname Schema",
-            "default": "",
-            "examples": [
-             "PRE - Staging"
-            ],
-            "pattern": "^(.*)$"
-          },
           "Name": {
-            "$id": "#/properties/Release/properties/Name",
+            "$id": "#/properties/ExternalWebGameList/items/properties/Name",
             "type": "string",
             "title": "The Name Schema",
             "default": "",
             "examples": [
-              "Voucher-API-Release-154"
-            ],
-            "pattern": "^(.*)$"
+              "Sofi test game 1"
+            ]
           },
-          "RequestedBy": {
-            "$id": "#/properties/Release/properties/RequestedBy",
-            "type": "object",
-            "title": "The Requestedby Schema",
-            "required": [
-              "Name",
-              "Email"
-            ],
-            "properties": {
-              "Name": {
-                "$id": "#/properties/Release/properties/RequestedBy/properties/Name",
-                "type": "string",
-                "title": "The Name Schema",
-               "default": "",
-               "examples": [
-                 "Kushnir, Ivanna"
-               ],
-               "pattern": "^(.*)$"
-             },
-             "Email": {
-               "$id": "#/properties/Release/properties/RequestedBy/properties/Email",
-               "type": "string",
-               "title": "The Email Schema",
-               "default": "",
-               "examples": [
-                "iku@cwallet.dk"
-               ],
-               "pattern": "^(.*)$"
-             }
-           }
-         }
-       }
-     },
-
-       ],
-       "properties": {
-         "Version": {
-           
-           "type": "string",
-           "title": "The Version Schema",
-           "default": "",
-           "examples": [
-             "1.0.0.0"
-           ],
-           "pattern": "^(.*)$"
-         },
-         "LastWriteTime": {
-           
-           "type": "string",
-           "title": "The Lastwritetime Schema",
-           "default": "",
-           "examples": [
-             "2019-08-02T15:55:36.000Z"
-           ],
-           "pattern": "^(.*)$"
-         }
-       }
-     },
-     "Environment": {
-       "$id": "#/properties/Environment",
-       "type": "object",
-       "title": "The Environment Schema",
-       "required": [
-         "Name"
-       ],
-       "properties": {
-         "Name": {
-           "$id": "#/properties/Environment/properties/Name",
-           "type": "string",
-           "title": "The Name Schema",
-           "default": "",
-           "examples": [
-             "PRE"
-           ],
-           "pattern": "^(.*)$"
-         }
-       }
-     },
-     "version": {
-       "$id": "#/properties/version",
-       "type": "string",
-       "title": "The Version Schema",
-       "default": "",
-       "examples": [
-         "1.0"
-       ],
-       "pattern": "^(.*)$"
-     }
-   }
- }
+          "Picture": {
+            "$id": "#/properties/ExternalWebGameList/items/properties/Picture",
+            "type": "string",
+            "title": "The Picture Schema",
+            "default": "",
+            "examples": [
+              "https://dev-coop-medlemsapp.s1.umbraco.io/media/7245/julekalender.png"
+            ]
+          },
+          "InfoPicture": {
+            "$id": "#/properties/ExternalWebGameList/items/properties/InfoPicture",
+            "type": "string",
+            "title": "The Infopicture Schema",
+            "default": "",
+            "examples": [
+              "https://dev-coop-medlemsapp.s1.umbraco.io/media/7246/750x1124_skrabespil.jpg"
+            ]
+          },
+          "ValidFrom": {
+            "$id": "#/properties/ExternalWebGameList/items/properties/ValidFrom",
+            "type": "string",
+            "title": "The Validfrom Schema",
+            "default": "",
+            "examples": [
+              "2018-09-20T10:39:12Z"
+            ]
+          },
+          "ValidTo": {
+            "$id": "#/properties/ExternalWebGameList/items/properties/ValidTo",
+            "type": "string",
+            "title": "The Validto Schema",
+            "default": "",
+            "examples": [
+              "2018-12-16T13:39:14Z"
+            ]
+          },
+          "TermsAndConditions": {
+            "$id": "#/properties/ExternalWebGameList/items/properties/TermsAndConditions",
+            "type": "string",
+            "title": "The Termsandconditions Schema",
+            "default": "",
+            "examples": [
+              "terms"
+            ]
+          },
+          "Priority": {
+            "$id": "#/properties/ExternalWebGameList/items/properties/Priority",
+            "type": "integer",
+            "title": "The Priority Schema",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          },
+          "TriggerId": {
+            "$id": "#/properties/ExternalWebGameList/items/properties/TriggerId",
+            "type": "integer",
+            "title": "The Triggerid Schema",
+            "default": 0,
+            "examples": [
+              124
+            ]
+          },
+          "GameUrl": {
+            "$id": "#/properties/ExternalWebGameList/items/properties/GameUrl",
+            "type": "string",
+            "title": "The Gameurl Schema",
+            "default": "",
+            "examples": [
+              "https://spil.coopmedlem.dk/coop-chokolade"
+            ]
+          }
+        }
+      }
+    },
+    "Status": {
+      "$id": "#/properties/Status",
+      "type": "object",
+      "title": "The Status Schema",
+      "required": [
+        "Code",
+        "Exception"
+      ],
+      "properties": {
+        "Code": {
+          "$id": "#/properties/Status/properties/Code",
+          "type": "string",
+          "title": "The Code Schema",
+          "default": "",
+          "examples": [
+            "ok"
+          ]
+        },
+        "Exception": {
+          "$id": "#/properties/Status/properties/Exception",
+          "type": "string",
+          "title": "The Exception Schema",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        }
+      }
+    }
+  }
+}
