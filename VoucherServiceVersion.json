@@ -12,7 +12,7 @@
       "version"
     ],
     "properties": {
-      "Build": {
+      "Build-is not added": {
         "$id": "#/properties/Build",
         "type": "object",
         "title": "The Build Schema",
