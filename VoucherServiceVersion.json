@@ -1,0 +1,182 @@
+  1 {
+  2   "definitions": {},
+  3   "$schema": "http://json-schema.org/draft-07/schema#",
+  4   "$id": "http://example.com/root.json",
+  5   "type": "object",
+  6   "title": "The Root Schema",
+  7   "required": [
+  8     "Build",
+  9     "Release",
+ 10     "Assembly",
+ 11     "Environment",
+ 12     "version"
+ 13   ],
+ 14   "properties": {
+ 15     "Build": {
+ 16       "$id": "#/properties/Build",
+ 17       "type": "object",
+ 18       "title": "The Build Schema",
+ 19       "required": [
+ 20         "Number",
+ 21         "SourceBranch",
+ 22         "SourceVersion"
+ 23       ],
+ 24       "properties": {
+ 25         "Number": {
+ 26           "$id": "#/properties/Build/properties/Number",
+ 27           "type": "string",
+ 28           "title": "The Number Schema",
+ 29           "default": "",
+ 30           "examples": [
+ 31             "Voucher-API.20190802.1"
+ 32           ],
+ 33           "pattern": "^(.*)$"
+ 34         },
+ 35         "SourceBranch": {
+ 36           "$id": "#/properties/Build/properties/SourceBranch",
+ 37           "type": "string",
+ 38           "title": "The Sourcebranch Schema",
+ 39           "default": "",
+ 40           "examples": [
+ 41             "refs/heads/master"
+ 42           ],
+ 43           "pattern": "^(.*)$"
+ 44         },
+ 45         "SourceVersion": {
+ 46           "$id": "#/properties/Build/properties/SourceVersion",
+ 47           "type": "string",
+ 48           "title": "The Sourceversion Schema",
+ 49           "default": "",
+ 50           "examples": [
+ 51             "6a3ef5aae6139b6781b4bfa793f74a4b6a5824cf"
+ 52           ],
+ 53           "pattern": "^(.*)$"
+ 54         }
+ 55       }
+ 56     },
+ 57     "Release": {
+ 58       "$id": "#/properties/Release",
+ 59       "type": "object",
+ 60       "title": "The Release Schema",
+ 61       "required": [
+ 62         "EnvironmentName",
+ 63         "Name",
+ 64         "RequestedBy"
+ 65       ],
+ 66       "properties": {
+ 67         "EnvironmentName": {
+ 68           "$id": "#/properties/Release/properties/EnvironmentName",
+ 69           "type": "string",
+ 70           "title": "The Environmentname Schema",
+ 71           "default": "",
+ 72           "examples": [
+ 73             "PRE - Staging"
+ 74           ],
+ 75           "pattern": "^(.*)$"
+ 76         },
+ 77         "Name": {
+ 78           "$id": "#/properties/Release/properties/Name",
+ 79           "type": "string",
+ 80           "title": "The Name Schema",
+ 81           "default": "",
+ 82           "examples": [
+ 83             "Voucher-API-Release-154"
+ 84           ],
+ 85           "pattern": "^(.*)$"
+ 86         },
+ 87         "RequestedBy": {
+ 88           "$id": "#/properties/Release/properties/RequestedBy",
+ 89           "type": "object",
+ 90           "title": "The Requestedby Schema",
+ 91           "required": [
+ 92             "Name",
+ 93             "Email"
+ 94           ],
+ 95           "properties": {
+ 96             "Name": {
+ 97               "$id": "#/properties/Release/properties/RequestedBy/properties/Name",
+ 98               "type": "string",
+ 99               "title": "The Name Schema",
+100               "default": "",
+101               "examples": [
+102                 "Kushnir, Ivanna"
+103               ],
+104               "pattern": "^(.*)$"
+105             },
+106             "Email": {
+107               "$id": "#/properties/Release/properties/RequestedBy/properties/Email",
+108               "type": "string",
+109               "title": "The Email Schema",
+110               "default": "",
+111               "examples": [
+112                 "iku@cwallet.dk"
+113               ],
+114               "pattern": "^(.*)$"
+115             }
+116           }
+117         }
+118       }
+119     },
+120     "Assembly": {
+121       "$id": "#/properties/Assembly",
+122       "type": "object",
+123       "title": "The Assembly Schema",
+124       "required": [
+125         "Version",
+126         "LastWriteTime"
+127       ],
+128       "properties": {
+129         "Version": {
+130           "$id": "#/properties/Assembly/properties/Version",
+131           "type": "string",
+132           "title": "The Version Schema",
+133           "default": "",
+134           "examples": [
+135             "1.0.0.0"
+136           ],
+137           "pattern": "^(.*)$"
+138         },
+139         "LastWriteTime": {
+140           "$id": "#/properties/Assembly/properties/LastWriteTime",
+141           "type": "string",
+142           "title": "The Lastwritetime Schema",
+143           "default": "",
+144           "examples": [
+145             "2019-08-02T15:55:36.000Z"
+146           ],
+147           "pattern": "^(.*)$"
+148         }
+149       }
+150     },
+151     "Environment": {
+152       "$id": "#/properties/Environment",
+153       "type": "object",
+154       "title": "The Environment Schema",
+155       "required": [
+156         "Name"
+157       ],
+158       "properties": {
+159         "Name": {
+160           "$id": "#/properties/Environment/properties/Name",
+161           "type": "string",
+162           "title": "The Name Schema",
+163           "default": "",
+164           "examples": [
+165             "PRE"
+166           ],
+167           "pattern": "^(.*)$"
+168         }
+169       }
+170     },
+171     "version": {
+172       "$id": "#/properties/version",
+173       "type": "string",
+174       "title": "The Version Schema",
+175       "default": "",
+176       "examples": [
+177         "1.0"
+178       ],
+179       "pattern": "^(.*)$"
+180     }
+181   }
+182 }
